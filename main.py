@@ -4,6 +4,7 @@ import pandas as pd
 
 app = Flask(__name__)
 
+col_names=list()       
 
 @app.route('/', methods=['GET'])
 def ping():
@@ -18,9 +19,9 @@ def predict():
     prediction = list(model.predict(df))
     return jsonify({'prediction': str(prediction)})
 
-        
 
 if __name__ == '__main__':
+    
 
     def columns_add_remove(data):
     
