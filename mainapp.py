@@ -4,6 +4,7 @@ import pandas as pd
 
 app = Flask(__name__)
 
+global model,col_names
 model=None
 col_names=None
 
@@ -40,6 +41,5 @@ def predict():
 
 
 if __name__ == '__main__':
-    global model,col_names
     model = joblib.load("Customer Churn Prediction Model.pkl") 
     col_names = joblib.load("Customer Churn Prediction Columns.pkl")
