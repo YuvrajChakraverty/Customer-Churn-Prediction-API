@@ -4,7 +4,8 @@ import pandas as pd
 
 app = Flask(__name__)
 
-col_names=list()       
+col_names=list()      
+model=None 
 
 @app.route('/', methods=['GET'])
 def ping():
