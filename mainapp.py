@@ -4,6 +4,9 @@ import pandas as pd
 
 app = Flask(__name__)
 
+model=None
+col_names=None
+
 def columns_add_remove(data):
     
     def tenure_cohort(tenure_months):
@@ -37,5 +40,6 @@ def predict():
 
 
 if __name__ == '__main__':
+    global model,col_names
     model = joblib.load("Customer Churn Prediction Model.pkl") 
     col_names = joblib.load("Customer Churn Prediction Columns.pkl")
