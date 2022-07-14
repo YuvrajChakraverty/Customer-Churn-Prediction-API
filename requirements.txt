@@ -1,5 +1,5 @@
 pandas
 flask
 gunicorn
-joblib==1.1.0
 scikit-learn==0.24.2
+pickle
