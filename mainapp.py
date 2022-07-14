@@ -36,7 +36,7 @@ def predict():
     return jsonify({'prediction': str(prediction)})
 
 
-if __name__ == '__main__':
-    model = joblib.load("Customer Churn Prediction Model.pkl") 
-    col_names = joblib.load("Customer Churn Prediction Columns.pkl")
-    app.run()
+
+model = joblib.load("Customer Churn Prediction Model.pkl") 
+col_names = joblib.load("Customer Churn Prediction Columns.pkl")
+app.run()
