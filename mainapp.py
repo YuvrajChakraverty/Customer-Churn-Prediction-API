@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-import pickle
+import joblib
 import pandas as pd
 
 app = Flask(__name__)
@@ -22,9 +22,9 @@ def columns_add_remove(data):
     
     return data
 
-# @app.route('/', methods=['GET'])
-# def ping():
-#     return "Application Working!"
+@app.route('/', methods=['GET'])
+def ping():
+    return "Application Working!"
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -37,7 +37,5 @@ def predict():
 
 
 if __name__ == '__main__':
-    with open('Customer Churn Prediction Model.pkl', 'rb') as f_in:
-        model = pickle.load(f_in)
-    with open('Customer Churn Prediction Columns.pkl', 'rb') as f_in:
-        col_names = pickle.load(f_in)
+    model = joblib.load("Customer Churn Prediction Model.pkl") 
+    col_names = joblib.load("Customer Churn Prediction Columns.pkl")
